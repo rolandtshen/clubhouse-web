@@ -11,3 +11,75 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.container {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.double-center {
+  width: 100%;
+  height: 500px;
+
+  position: absolute; /*it can be fixed too*/
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin:auto;
+
+/*this to solve "the content will not be cut when the window is smaller than the content": */
+  max-width: 50%;
+  max-height: 100%;
+  overflow: visible;
+
+}
+
+.logo {
+  padding: 8px 16px 8px 16px;
+  color: #FFFFFF;
+  background-color: #0086FF;
+  border-radius: 100px;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.primary-title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  margin-top: 50px;
+}
+
+.secondary-title {
+  margin-bottom: 32px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 36px;
+  padding-bottom: 40px;
+}
+
+.apply {
+  display: inline-block;
+  padding: 20px 50px 20px 50px;
+  background-image: linear-gradient(-60deg, #19BAAA 0%, #25A7B9 100%);
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 36px;
+  color: #FFF;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+.apply:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
