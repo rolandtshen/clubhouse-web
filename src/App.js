@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <div className="container">
         <Route exact path="/" component={Home} />
-        <Route path="/apply" component={Apply} />
+        <Route exact path="/apply" component={Apply} />
       </div>
     </BrowserRouter>
   );

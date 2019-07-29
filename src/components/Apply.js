@@ -1,24 +1,61 @@
 import React, { Component } from 'react';
+import AuthHeader from './AuthHeader'
+import '../apply.css';
 
 class Apply extends Component {
+  state = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    org: "",
+    essay: ""
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state.firstName);
+  }
+
+  change = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    this.setState({
+      [name]: value
+    });
+  }
+
   render() {
     return (
-      <form>
-        <div classNameName="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></input>
-          <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+      <div>
+        <AuthHeader />
+        <div class="contain">
+          <div class="form">
+            <h3>Apply</h3>
+            <form onSubmit={this.handleSubmit}>
+               <p>
+                 <input onChange={this.change} name="firstName" placeholder="First Name" type="text" />
+               </p>
+               <p>
+                 <input onChange={this.change} name="lastName" placeholder="Last Name" type="text" />
+               </p>
+               <p className="full-width">
+                 <input onChange={this.change} name="email" placeholder="Email Address" type="text" />
+               </p>
+               <p className="full-width">
+                 <input onChange={this.change} name="org" placeholder="Company, school, or organization" type="text" />
+               </p>
+               <p className="full-width">
+                 <textarea onChange={this.change} name="essay" placeholder="Tell us a bit about who you are and what you do." name="" id="" cols="30" rows="7"></textarea>
+               </p>
+               <p className="full-width">
+                 <label>Skill Sheet (This could be a resume, list of skills, or any other PDF document that represents your skills to a company.)</label>
+                 <input onChange={this.change} type="file" name="pic" accept="image/*" />
+               </p>
+               <button className="full-width" type="submit">Submit</button>
+              </form>
+          </div>
         </div>
-        <div classNameName="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"></input>
-        </div>
-        <div classNameName="form-check">
-          <input type="checkbox" className="form-check-input" id="exampleCheck1"></input>
-          <label className="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
+      </div>
     );
   }
 }
