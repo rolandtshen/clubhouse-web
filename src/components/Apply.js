@@ -13,7 +13,7 @@ class Apply extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.firstName);
+    console.log(this.state);
   }
 
   change = (e) => {
@@ -26,7 +26,7 @@ class Apply extends Component {
 
   render() {
     return (
-      <div>
+      <div className="apply-wrapper">
         <AuthHeader />
         <div class="contain">
           <div class="form">
@@ -49,7 +49,7 @@ class Apply extends Component {
                </p>
                <p className="full-width">
                  <label>Skill Sheet (This could be a resume, list of skills, or any other PDF document that represents your skills to a company.)</label>
-                 <input onChange={this.change} type="file" name="pic" accept="image/*" />
+                 <input className="resume-input" onChange={this.change} type="file" name="resume" accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, text/plain, application/pdf, image/*" />
                </p>
                <button className="full-width" type="submit">Submit</button>
               </form>
