@@ -41,16 +41,19 @@ textarea,
 button {
   width: 100%;
   border-radius: 5px;
+  border: none;
+  font-size: 20px;
 }
 
 .wrapper {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   background-color: #0086FF;
-
 }
+
 .wrapper > * {
   padding: 1em;
 }
+
 @media (min-width: 700px) {
   .wrapper {
     display: grid;
@@ -80,7 +83,6 @@ form {
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
   background-color: #0086FF;
-
 }
 
 form label {
@@ -109,6 +111,7 @@ button {
   font-size: 24px;
   color: #FFF;
   margin: auto;
+  border: none;
 }
 
 button:hover, button:focus {
