@@ -53,6 +53,7 @@ class Apply extends Component {
           email: this.state.email,
           organization: this.state.organization,
           essay: this.state.essay,
+          skillSheet: "temp skillsheet"
         }
         // skillSheet: this.state.skillSheet
       })
