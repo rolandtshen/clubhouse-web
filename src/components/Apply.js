@@ -40,6 +40,23 @@ class Apply extends Component {
     return errors;
   }
 
+  sendConfirmationEmail = () => {
+    axios.post('http://localhost:8000/api/email/sendConfirmation', {
+      app: {
+        firstName: this.state.firstName,
+        email: this.state.email
+      }
+    })
+    .then((response) => {
+      if(response != null) {
+        console.log("Application submitted, email sent.");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     // reset submission
@@ -57,14 +74,15 @@ class Apply extends Component {
         }
         // skillSheet: this.state.skillSheet
       })
-      .then( (response) => {
+      .then((response) => {
         if(response != null) {
           //route to next page?
           console.log("Application submitted!")
+          this.sendConfirmationEmail();
           window.location = "/thanks";
         }
       })
-      .catch( (err) => {
+      .catch((err) => {
         console.log("Error");
       })
     }
